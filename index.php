@@ -48,24 +48,12 @@ if (!isLoggedIn()) {
 </div>
 <br>
 <div class="container">
-    <form method="POST" enctype="multipart/form-data" action="index.php">
-        <input type="file" name="file">
-        <input type="submit" name="upload">
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="maxFileSize" value="1000000">
+        <input type="file" name="uploadFile" id="uploadFile">
+        <input type="submit" value="Upload File" name="submit">
     </form>
 </div>
-
-<?php
-
-$files = scandir("upload");
-
-for ($a = 2; $a < count($files); $a++) {
-    ?>
-    <p>
-        <a download="<?php echo $files[$a] ?>" href="uploads/<?php echo $files[$a] ?>"><?php echo $files [$a] ?></a>
-    </p>
-    <?php
-}
-?>
 
 </body>
 </html>
