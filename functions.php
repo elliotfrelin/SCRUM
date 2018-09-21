@@ -59,7 +59,7 @@
 						  VALUES('$username', '$email', '$user_type', '$password')";
 				mysqli_query($db, $query);
 				$_SESSION['success']  = "New " .$user_type. " successfully created!!";
-				header('location: home.php');
+				header('location: AdminHome.php');
 			}else{
 				$query = "INSERT INTO users (username, email, user_type, password) 
 						  VALUES('$username', '$email', 'user', '$password')";
@@ -123,7 +123,7 @@
 
                         $_SESSION['user'] = $logged_in_user;
                         $_SESSION['success']  = "You are now logged in";
-                        header('location: superadmin/AdminHome.php');
+                        header('location: admin/AdminHome.php');
                     }else{
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "You are now logged in";
