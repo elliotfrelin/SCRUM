@@ -50,7 +50,7 @@ if (!isLoggedIn()) {
 <div class="container">
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="maxFileSize" value="1000000">
-        <input type="file" name="uploadFile" id="uploadFile">
+        <input type="file" name="fileToUpload" id="uploadFile">
         <input type="submit" value="Upload File" name="submit">
     </form>
 </div>
